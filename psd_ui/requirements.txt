@@ -1,0 +1,4 @@
+## no version specifications
+psd-tools
+requests
+Pillow
