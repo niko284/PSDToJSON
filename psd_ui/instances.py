@@ -77,9 +77,9 @@ def Frame(layer):
 		offset = (x1 - x2, y1 - y2)
 
 	# handle strokes
-	#if hasattr(layer, "stroke") and layer.stroke != None:
-		# if layer.stroke.enabled == True:
-			# instance["Stroke"] = layer.stroke # This is set later, but for now we use as a flag that the instance has a stroke
+	if hasattr(layer, "stroke") and layer.stroke != None:
+		if layer.stroke.enabled == True:
+			instance["Stroke"] = layer.stroke # This is set later, but for now we use as a flag that the instance has a stroke
 
 
 	instance = {

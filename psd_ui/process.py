@@ -13,7 +13,7 @@ def RecursiveFrame(frame, psd, imgFrames):
 			continue
 
 		if PARENT_FLAG in layer.name:
-			print("Skipping %s" % layer.name)
+			# print("Skipping %s" % layer.name)
 			continue # skip layers with PARENT_ flag, they are used to describe parent layers
 
 		isParentLayer = layer.kind == "group" or layer.kind == "artboard" # parent layers are groups or artboards (they contain children layers)
@@ -24,7 +24,7 @@ def RecursiveFrame(frame, psd, imgFrames):
 			for child in layer:
 				if PARENT_FLAG in child.name:
 					parentLayer = child
-					print("Got parent layer %s for %s" % (parentLayer.name, layer.name))
+					# print("Got parent layer %s for %s" % (parentLayer.name, layer.name))
 					break
 
 

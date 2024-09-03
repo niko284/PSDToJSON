@@ -29,14 +29,6 @@ def TarmacSync(outputPath, cookie):
 	f.write(TARMAC_TOML.format(parentPath.stem, subPath))
 	f.close()
 
-	print(subprocess.run([
-		"tarmac", "sync", 
-		"--target", "roblox",
-		"--retry", "5",
-		"--retry-delay", "60",
-		"--auth", cookie
-	], cwd = parentPath.as_posix()).stderr)
-
 	f = open(outputPath.as_posix() + "/assetids.lua", "r")
 	matches = re.findall(r'\S+_(\d+) = "(rbxassetid://\d+)"', f.read())
 
